@@ -1,0 +1,3 @@
+[submodule "oppai-sys/oppai"]
+	path = oppai-sys/oppai
+	url = https://github.com/Francesco149/oppai-ng
