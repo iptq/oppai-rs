@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Michael Zhang <iptq@protonmail.com>"]
 edition = "2018"
 build = "build.rs"
+exclude = ["aaaa", "bbbb"]
 
 [lib]
 path = "lib.rs"

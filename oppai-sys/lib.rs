@@ -90,232 +90,98 @@ pub const TAIKO_TYPE_CHANGE_BONUS: f64 = 0.75;
 pub const TAIKO_RHYTHM_CHANGE_BONUS: f64 = 1.0;
 pub const TAIKO_RHYTHM_CHANGE_BASE_THRESHOLD: f64 = 0.2;
 pub const TAIKO_RHYTHM_CHANGE_BASE: f64 = 2.0;
+
+// main struct
 pub type ezpp_t = *mut ezpp;
 extern "C" {
     pub fn ezpp_new() -> ezpp_t;
-}
-extern "C" {
     pub fn ezpp_free(ez: ezpp_t);
-}
-extern "C" {
     pub fn ezpp(ez: ezpp_t, map: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_pp(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_stars(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_set_autocalc(ez: ezpp_t, autocalc: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_autocalc(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_data(
         ez: ezpp_t,
         data: *mut ::std::os::raw::c_char,
         data_size: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_aim_stars(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_speed_stars(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_aim_pp(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_speed_pp(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_acc_pp(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_accuracy_percent(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_n300(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_n100(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_n50(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_nmiss(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_ar(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_cs(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_od(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_hp(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_artist(ez: ezpp_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn ezpp_artist_unicode(ez: ezpp_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn ezpp_title(ez: ezpp_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn ezpp_title_unicode(ez: ezpp_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn ezpp_version(ez: ezpp_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn ezpp_creator(ez: ezpp_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn ezpp_ncircles(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_nsliders(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_nspinners(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_nobjects(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_odms(ez: ezpp_t) -> f32;
-}
-extern "C" {
     pub fn ezpp_mode(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_combo(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_max_combo(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_mods(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_score_version(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_time_at(ez: ezpp_t, i: ::std::os::raw::c_int) -> f32;
-}
-extern "C" {
     pub fn ezpp_strain_at(
         ez: ezpp_t,
         i: ::std::os::raw::c_int,
         difficulty_type: ::std::os::raw::c_int,
     ) -> f32;
-}
-extern "C" {
     pub fn ezpp_set_aim_stars(ez: ezpp_t, aim_stars: f32);
-}
-extern "C" {
     pub fn ezpp_set_speed_stars(ez: ezpp_t, speed_stars: f32);
-}
-extern "C" {
     pub fn ezpp_set_base_ar(ez: ezpp_t, ar: f32);
-}
-extern "C" {
     pub fn ezpp_set_base_od(ez: ezpp_t, od: f32);
-}
-extern "C" {
     pub fn ezpp_set_base_cs(ez: ezpp_t, cs: f32);
-}
-extern "C" {
     pub fn ezpp_set_base_hp(ez: ezpp_t, hp: f32);
-}
-extern "C" {
     pub fn ezpp_set_mode_override(ez: ezpp_t, mode_override: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_mode(ez: ezpp_t, mode: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_mods(ez: ezpp_t, mods: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_combo(ez: ezpp_t, combo: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_nmiss(ez: ezpp_t, nmiss: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_score_version(ez: ezpp_t, score_version: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_accuracy_percent(ez: ezpp_t, accuracy_percent: f32);
-}
-extern "C" {
     pub fn ezpp_set_accuracy(ez: ezpp_t, n100: ::std::os::raw::c_int, n50: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_end(ez: ezpp_t, end: ::std::os::raw::c_int);
-}
-extern "C" {
     pub fn ezpp_set_end_time(ez: ezpp_t, end: f32);
-}
-extern "C" {
     pub fn ezpp_dup(ez: ezpp_t, mapfile: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn ezpp_data_dup(
         ez: ezpp_t,
         data: *mut ::std::os::raw::c_char,
         data_size: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn errstr(err: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn oppai_version(
         major: *mut ::std::os::raw::c_int,
         minor: *mut ::std::os::raw::c_int,
         patch: *mut ::std::os::raw::c_int,
     );
-}
-extern "C" {
     pub fn oppai_version_str() -> *mut ::std::os::raw::c_char;
 }
 pub type _bindgen_ty_1 = u32;
 extern "C" {
     pub fn info(fmt: *mut ::std::os::raw::c_char, ...) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn get_inf() -> f32;
-}
-extern "C" {
     pub fn get_nan() -> f32;
-}
-extern "C" {
     pub fn v2f_sub(dst: *mut f32, a: *mut f32, b: *mut f32);
-}
-extern "C" {
     pub fn v2f_len(v: *mut f32) -> f32;
-}
-extern "C" {
     pub fn v2f_dot(a: *mut f32, b: *mut f32) -> f32;
-}
-extern "C" {
     pub fn is_nan(b: f32) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn is_inf(b: f32) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn whitespace(c: ::std::os::raw::c_char) -> ::std::os::raw::c_int;
 }
 #[repr(C)]
@@ -359,21 +225,11 @@ fn bindgen_test_layout_slice() {
 }
 pub type slice_t = slice;
 extern "C" {
-    pub fn slice_write(s: *mut slice_t, f: *mut FILE) -> ::std::os::raw::c_int;
-}
-extern "C" {
+    pub fn slice_write(s: *mut slice_t, f: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
     pub fn slice_whitespace(s: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn slice_trim(s: *mut slice_t);
-}
-extern "C" {
     pub fn slice_cmp(s: *mut slice_t, str: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn slice_len(s: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn slice_split(
         s: *mut slice_t,
         separator_list: *mut ::std::os::raw::c_char,
@@ -381,8 +237,6 @@ extern "C" {
         nmax: ::std::os::raw::c_int,
         err: *mut ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn array_reserve_i(
         n: ::std::os::raw::c_int,
         cap: *mut ::std::os::raw::c_int,
@@ -390,8 +244,6 @@ extern "C" {
         data: *mut *mut ::std::os::raw::c_void,
         esize: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn array_free_i(
         cap: *mut ::std::os::raw::c_int,
         len: *mut ::std::os::raw::c_int,
@@ -1550,105 +1402,49 @@ fn bindgen_test_layout_ezpp() {
 }
 extern "C" {
     pub fn m_reserve(ez: ezpp_t, min_size: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn m_alloc(ez: ezpp_t, size: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_void;
-}
-extern "C" {
     pub fn m_strndup(
         ez: ezpp_t,
         s: *mut ::std::os::raw::c_char,
         n: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn m_free(ez: ezpp_t);
-}
-extern "C" {
     pub static mut od10_ms: [f32; 2usize];
-}
-extern "C" {
     pub static mut od0_ms: [f32; 2usize];
-}
-extern "C" {
     pub static mut od_ms_step: [f32; 2usize];
-}
-extern "C" {
     pub fn mods_apply(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub static mut playfield_center: [f32; 2usize];
-}
-extern "C" {
     pub fn print_line(line: *mut slice_t);
-}
-extern "C" {
     pub fn p_warn(e: *mut ::std::os::raw::c_char, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_consume_til(
         s: *mut slice_t,
         separators: *mut ::std::os::raw::c_char,
         dst: *mut slice_t,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_float(value: *mut slice_t) -> f32;
-}
-extern "C" {
     pub fn p_section_name(s: *mut slice_t, name: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_property(
         s: *mut slice_t,
         name: *mut slice_t,
         value: *mut slice_t,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_slicedup(ez: ezpp_t, s: *mut slice_t) -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
     pub fn p_metadata(ez: ezpp_t, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_general(ez: ezpp_t, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_difficulty(ez: ezpp_t, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_timing(ez: ezpp_t, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_objects(ez: ezpp_t, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_line(ez: ezpp_t, line: *mut slice_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn p_end(ez: ezpp_t);
-}
-extern "C" {
     pub fn p_reset(ez: ezpp_t);
-}
-extern "C" {
-    pub fn p_map(ez: ezpp_t, f: *mut FILE) -> ::std::os::raw::c_int;
-}
-extern "C" {
+    pub fn p_map(ez: ezpp_t, f: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
     pub fn p_map_mem(
         ez: ezpp_t,
         data: *mut ::std::os::raw::c_char,
         data_size: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub static mut decay_base: [f32; 2usize];
-}
-extern "C" {
     pub static mut weight_scaling: [f32; 2usize];
-}
-extern "C" {
     pub fn d_spacing_weight(
         distance: f32,
         delta_time: f32,
@@ -1658,22 +1454,16 @@ extern "C" {
         type_: ::std::os::raw::c_int,
         is_single: *mut ::std::os::raw::c_int,
     ) -> f32;
-}
-extern "C" {
     pub fn d_calc_strain(
         type_: ::std::os::raw::c_int,
         o: *mut object_t,
         prev: *mut object_t,
         speedmul: f32,
     );
-}
-extern "C" {
     pub fn dbl_desc(
         a: *const ::std::os::raw::c_void,
         b: *const ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn d_update_max_strains(
         ez: ezpp_t,
         decay_factor: f32,
@@ -1683,17 +1473,9 @@ extern "C" {
         prev_strain: f32,
         first_obj: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn d_weigh_strains(ez: ezpp_t, pdiff: *mut f32, ptotal: *mut f32);
-}
-extern "C" {
     pub fn d_calc_individual(ez: ezpp_t, type_: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn d_length_bonus(stars: f32, difficulty: f32) -> f32;
-}
-extern "C" {
     pub fn d_std(ez: ezpp_t) -> ::std::os::raw::c_int;
 }
 #[repr(C)]
@@ -1793,31 +1575,17 @@ fn bindgen_test_layout_taiko_object() {
 pub type taiko_object_t = taiko_object;
 extern "C" {
     pub fn taiko_change_bonus(cur: *mut taiko_object_t, prev: *mut taiko_object_t) -> f32;
-}
-extern "C" {
     pub fn taiko_rhythm_bonus(cur: *mut taiko_object_t, prev: *mut taiko_object_t) -> f32;
-}
-extern "C" {
     pub fn taiko_strain(cur: *mut taiko_object_t, prev: *mut taiko_object_t);
-}
-extern "C" {
     pub fn swap_ptrs(a: *mut *mut ::std::os::raw::c_void, b: *mut *mut ::std::os::raw::c_void);
-}
-extern "C" {
     pub fn d_taiko(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn d_calc(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn acc_calc(
         n300: ::std::os::raw::c_int,
         n100: ::std::os::raw::c_int,
         n50: ::std::os::raw::c_int,
         misses: ::std::os::raw::c_int,
     ) -> f32;
-}
-extern "C" {
     pub fn acc_round(
         acc_percent: f32,
         nobjects: ::std::os::raw::c_int,
@@ -1826,15 +1594,11 @@ extern "C" {
         n100: *mut ::std::os::raw::c_int,
         n50: *mut ::std::os::raw::c_int,
     );
-}
-extern "C" {
     pub fn taiko_acc_calc(
         n300: ::std::os::raw::c_int,
         n150: ::std::os::raw::c_int,
         nmiss: ::std::os::raw::c_int,
     ) -> f32;
-}
-extern "C" {
     pub fn taiko_acc_round(
         acc_percent: f32,
         nobjects: ::std::os::raw::c_int,
@@ -1842,32 +1606,16 @@ extern "C" {
         n300: *mut ::std::os::raw::c_int,
         n150: *mut ::std::os::raw::c_int,
     );
-}
-extern "C" {
     pub fn base_pp(stars: f32) -> f32;
-}
-extern "C" {
     pub fn pp_std(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn pp_taiko(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn params_from_map(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn calc(ez: ezpp_t) -> ::std::os::raw::c_int;
-}
-extern "C" {
     pub fn free_owned_map(ez: ezpp_t);
-}
-extern "C" {
     pub fn memclone(
         p: *mut ::std::os::raw::c_void,
         size: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_void;
-}
-extern "C" {
     pub fn strclone(s: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
 }
 pub type __builtin_va_list = [__va_list_tag; 1usize];
