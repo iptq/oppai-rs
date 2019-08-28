@@ -17,13 +17,30 @@ impl Oppai {
         unsafe { oppai_sys::ezpp_set_mods(self.0, mods.bits() as i32) };
     }
 
+    /// Get the pointer to the ezpp struct
+    pub fn raw(&self) -> oppai_sys::ezpp_t {
+        self.0
+    }
+
     /// Calculate pp from map file
     ///
     /// pass `"-"` to read from stdin
-    pub fn calculate(&self, mapfile: impl AsRef<str>) {
+    pub fn calculate<'a>(&mut self, mapfile: impl AsRef<str>) {
         let mapfile = mapfile.as_ref();
         let mapfile_cstr = CString::new(mapfile).expect("null bytes in mapfile");
         unsafe { oppai_sys::ezpp(self.0, mapfile_cstr.as_ptr() as *mut _) };
+    }
+
+    /// Get the pp value of the previously calculated map
+    #[inline]
+    pub fn get_pp(&self) -> f32 {
+        unsafe { oppai_sys::ezpp_pp(self.0) }
+    }
+
+    /// Get the star rating of the previously calculated map
+    #[inline]
+    pub fn get_stars(&self) -> f32 {
+        unsafe { oppai_sys::ezpp_stars(self.0) }
     }
 }
 
