@@ -8,3 +8,5 @@ edition = "2018"
 members = ["oppai-sys"]
 
 [dependencies]
+bitflags = "1.1"
+oppai-sys = "0.1"
